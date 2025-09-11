@@ -23,7 +23,7 @@ class ACTIONRPGENGINE_API UBaseActorAttributes : public UAttributeSet
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Base Attributes")
 	FGameplayAttributeData Health;
 	ATTRIBUTE_ACCESSORS(UBaseActorAttributes, Health);
 };
