@@ -25,8 +25,16 @@ void AActionRPGCharacter::BeginPlay()
 	if (IsValid(AbilitySystemComponent))
 	{
 		BaseActorAttributes = AbilitySystemComponent->GetSet<UBaseActorAttributes>();
+
+		AbilitySystemComponent->GetGameplayAttributeValueChangeDelegate(BaseActorAttributes->GetHealthAttribute()).AddUObject(this, &AActionRPGCharacter::HealthAttributeChanged);
 	}
 }
+
+void AActionRPGCharacter::HealthAttributeChanged(const FOnAttributeChangeData& Data)
+{
+	OnHealthChanged(Data.NewValue);
+}
+
 
 // Called every frame
 void AActionRPGCharacter::Tick(float DeltaTime)

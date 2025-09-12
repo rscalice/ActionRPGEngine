@@ -26,6 +26,11 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Base Attributes")
 	class UAbilitySystemComponent* AbilitySystemComponent;
 
+	virtual void HealthAttributeChanged(const FOnAttributeChangeData& Data);
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Attribute Events")
+	void OnHealthChanged(float Health);
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
