@@ -65,10 +65,6 @@
 		{
 			"Name": "CascadeToNiagaraConverter",
 			"Enabled": true
-		},
-		{
-			"Name": "MetaHumanCharacter",
-			"Enabled": true
 		}
 	]
 }
